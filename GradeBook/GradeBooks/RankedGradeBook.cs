@@ -30,22 +30,26 @@ namespace GradeBook.GradeBooks
                     below++;
                 }
             }
-            if (above / (above + below) <= 0.2)
+            Console.WriteLine("above: " + above + " below: " + below);
+            if ((double)above / (double)(above + below) <= 0.2)
             {
                 return 'A';
-            }else if (above / (above + below) <= 0.4)
+            }else if ((double)above / (double)(above + below) <= 0.4)
             {
                 return 'B';
             }
-            else if (above / (above + below) <= 0.6)
+            else if ((double)above / (double)(above + below) <= 0.6)
             {
                 return 'C';
             }
-            else if (above / (above + below) <= 0.8)
+            else if ((double)above / (double)(above + below) <= 0.8)
             {
                 return 'D';
             }
+            else
+            {
                 return 'F';
+            }
         }
     }
 }
