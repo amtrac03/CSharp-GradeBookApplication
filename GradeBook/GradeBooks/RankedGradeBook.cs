@@ -25,18 +25,18 @@ namespace GradeBook.GradeBooks
                     above++;
                 }
             }
-            if (above / Students.Count < 0.2)
+            if (above / (double)Students.Count < 0.2)
             {
                 return 'A';
-            }else if (above / Students.Count < 0.4)
+            }else if (above / (double)Students.Count < 0.4)
             {
                 return 'B';
             }
-            else if (above / Students.Count < 0.6)
+            else if (above / (double)Students.Count < 0.6)
             {
                 return 'C';
             }
-            else if (above / Students.Count < 0.8)
+            else if (above / (double)Students.Count < 0.8)
             {
                 return 'D';
             }
