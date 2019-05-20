@@ -17,8 +17,8 @@ namespace GradeBook.GradeBooks
             {
                 throw new InvalidOperationException();
             }
-            int above=0;
-            int below =0;
+            int above = 0;
+            int below = 0;
             foreach (var student in Students)
             {
                 if (averageGrade > student.AverageGrade)
@@ -30,19 +30,18 @@ namespace GradeBook.GradeBooks
                     below++;
                 }
             }
-            Console.WriteLine("above: " + above + " below: " + below);
-            if ((double)above / (double)(above + below) <= 0.2)
+            if (above / (double)(above + below) < 0.2)
             {
                 return 'A';
-            }else if ((double)above / (double)(above + below) <= 0.4)
+            }else if (above / (double)(above + below) < 0.4)
             {
                 return 'B';
             }
-            else if ((double)above / (double)(above + below) <= 0.6)
+            else if (above / (double)(above + below) < 0.6)
             {
                 return 'C';
             }
-            else if ((double)above / (double)(above + below) <= 0.8)
+            else if (above / (double)(above + below) < 0.8)
             {
                 return 'D';
             }
