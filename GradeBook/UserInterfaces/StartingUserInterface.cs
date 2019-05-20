@@ -36,26 +36,12 @@ namespace GradeBook.UserInterfaces
             var parts = command.Split(' ');
             if (parts.Length != 4)
             {
-                Console.WriteLine("Command not valid, Create requires a name, type of gradebook, if it's weighted (true/false).");
+                Console.WriteLine("Command not valid, Create requires a name, type of gradebook, if it's weighted (true / false).");
                 return;
             }
             var name = parts[1];
             var type = parts[2];
-            var weightString = parts[3];
-            bool weight;
-            if(weightString == "Weighted")
-            {
-                weight = true;
-            }
-            else if (weightString == "Unweighted")
-            {
-                weight = false;
-            }
-            else
-            {
-                Console.WriteLine(weightString + " is not Weighted/Unweighted, please try again");
-                return;
-            }
+            bool weight = bool.Parse(parts[3]);
             BaseGradeBook gradeBook;
             if(type == "Standard")
             {
