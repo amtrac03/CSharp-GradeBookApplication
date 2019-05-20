@@ -39,33 +39,26 @@ namespace GradeBook.GradeBooks
             {
                 return 'F';
             }
-            //int above = 0;
-            //foreach (var student in Students)
-            //{
-            //    if (averageGrade > student.AverageGrade)
-            //    {
-            //        above++;
-            //    }
-            //}
-            //if (above / (double)Students.Count < 0.2)
-            //{
-            //    return 'A';
-            //}else if (above / (double)Students.Count < 0.4)
-            //{
-            //    return 'B';
-            //}
-            //else if (above / (double)Students.Count < 0.6)
-            //{
-            //    return 'C';
-            //}
-            //else if (above / (double)Students.Count < 0.8)
-            //{
-            //    return 'D';
-            //}
-            //else
-            //{
-            //    return 'F';
-            //}
+        }
+        public override void CalculateStatistics()
+        {
+            if (Students.Count < 5)
+            {
+                Console.WriteLine("Ranked grading requires at least 5 students with grades in order to properly calculate a student's overall grade.");
+            }
+            else
+            {
+                base.CalculateStatistics();
+            }
+        }
+        public override void CalculateStudentStatistics(string name)
+        {
+            if (Students.Count < 5)
+            {
+                Console.WriteLine("Ranked grading requires at least 5 students with grades in order to properly calculate a student's overall grade.");
+                return;
+            }
+            base.CalculateStudentStatistics(name);
         }
     }
 }
