@@ -18,30 +18,25 @@ namespace GradeBook.GradeBooks
                 throw new InvalidOperationException();
             }
             int above = 0;
-            int below = 0;
             foreach (var student in Students)
             {
                 if (averageGrade > student.AverageGrade)
                 {
                     above++;
                 }
-                else
-                {
-                    below++;
-                }
             }
-            if (above / (double)(above + below) < 0.2)
+            if (above / Students.Count < 0.2)
             {
                 return 'A';
-            }else if (above / (double)(above + below) < 0.4)
+            }else if (above / Students.Count < 0.4)
             {
                 return 'B';
             }
-            else if (above / (double)(above + below) < 0.6)
+            else if (above / Students.Count < 0.6)
             {
                 return 'C';
             }
-            else if (above / (double)(above + below) < 0.8)
+            else if (above / Students.Count < 0.8)
             {
                 return 'D';
             }
